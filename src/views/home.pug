@@ -1,0 +1,9 @@
+extends base
+
+block content 
+    h1 TXT => HTML
+
+    form(method="POST" action="/read", enctype="multipart/form-data")
+        lael(for="html") 
+        input(name="html", type="file", id="html", accept="text/*")
+        input(type="submit", value="Convert!")
