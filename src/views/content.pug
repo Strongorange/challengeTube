@@ -1,4 +1,8 @@
 extends base
 
 block content
-    h1=data
+    if data 
+        h1=data
+        hr
+        a(href="/")
+            h4 Back to Home

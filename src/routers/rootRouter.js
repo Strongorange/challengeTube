@@ -5,9 +5,7 @@ import { uploadText } from "../middlewares";
 const rootRouter = express.Router();
 
 rootRouter.get("/", homePage);
-rootRouter
-  .route("/read")
-  .get(getRead)
-  .post(uploadText.single("html"), postRead);
+rootRouter.route("/read").post(uploadText.single("html"), postRead);
+rootRouter.get("/read/:id", getRead);
 
 export default rootRouter;

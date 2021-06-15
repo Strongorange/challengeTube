@@ -1,4 +1,5 @@
 extends base
+include mixins/content
 
 block content 
     h1 TXT => HTML
@@ -7,3 +8,8 @@ block content
         lael(for="html") 
         input(name="html", type="file", id="html", accept="text/*")
         input(type="submit", value="Convert!")
+
+    if data
+        h2 Now We have #{contentNumber} contents   
+        each content in data
+            +content(content)
